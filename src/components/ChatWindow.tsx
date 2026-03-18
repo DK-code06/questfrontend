@@ -3,8 +3,7 @@ import { Send, X, MessageSquare, Loader2} from 'lucide-react';
 import io from 'socket.io-client';
 import api from '../utils/api';
 
-const socket = io('http://localhost:5000');
-
+const socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000');
 interface Props {
   myId: string;
   myName: string;
